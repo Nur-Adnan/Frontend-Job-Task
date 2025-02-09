@@ -29,13 +29,11 @@ export type Action =
   | { type: typeof POLYGON_DELETED; payload: number }
   | { type: typeof POLYGON_UPDATED; payload: PolygonUpdatePayload };
 
-// Optimize polygonAdded to always use array for consistent reducer handling
 export const polygonAdded = (polygon: Polygon | Polygon[]): Action => ({
   type: POLYGON_ADDED,
   payload: Array.isArray(polygon) ? polygon : [polygon],
 });
 
-// Precompute common payload shapes where possible
 const createColorEditPayload = (
   id: number,
   colorType: ColorType,
@@ -51,13 +49,13 @@ export const polygonColorEdited = (
   payload: createColorEditPayload(id, colorType, colorValue),
 });
 
-// Direct primitive return for delete action
+// for delete action
 export const polygonDeleted = (polygonId: number): Action => ({
   type: POLYGON_DELETED,
   payload: polygonId,
 });
 
-// Reuse payload type definition
+// Reuse payload
 export const polygonUpdated = (id: number, name: string): Action => ({
   type: POLYGON_UPDATED,
   payload: { id, name },
