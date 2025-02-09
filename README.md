@@ -1,4 +1,6 @@
 # Interactive Polygon Mapping Tool 🌐
+![image](https://github.com/user-attachments/assets/bf389b4c-a25e-4d29-bf7f-a46ff6ba51dc)
+
 
 **Live Demo:** [Access Production Environment](https://frontend-job-task-rho.vercel.app/)  
 **Video Demonstration:** [View Functionality Walkthrough](https://github.com/user-attachments/assets/97b4c739-ad15-4419-9ed6-a37f21ad5df4)
