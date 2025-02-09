@@ -1,0 +1,281 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$danger-color: #e74c3c;
+$background-color: #f8f9fa;
+$text-color: #333;
+$border-radius: 8px;
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-style($bg-color, $text-color: #fff) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+// Main styles
+.polygon-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color $transition-duration ease;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $text-color;
+  }
+
+  &__theme-toggle {
+    @include button-style(transparent, $text-color);
+    padding: 0.5rem;
+  }
+
+  &__search {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 1px solid #ddd;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      transition: border-color $transition-duration ease;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+
+    svg {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+  }
+
+  &__items {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.polygon-item {
+  background-color: #fff;
+  border-radius: $border-radius;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow $transition-duration ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &__info {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  &__edit-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    font-size: 1rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__button {
+    @include flex-center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    border-radius: $border-radius;
+    transition: all $transition-duration ease;
+
+    &--stroke {
+      @include button-style($primary-color);
+    }
+
+    &--fill {
+      @include button-style($secondary-color);
+    }
+
+    &--delete {
+      @include button-style($danger-color);
+    }
+
+    &--edit,
+    &--save {
+      @include button-style(#f39c12);
+    }
+  }
+}
+
+.color-picker {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  background-color: #fff;
+  border-radius: $border-radius;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(88, 88, 88, 0.1);
+  z-index: 10;
+
+  .react-colorful {
+    width: 200px;
+    height: 200px;
+  }
+
+  input {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    font-size: 0.875rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  &__button {
+    @include button-style(#ddd, $text-color);
+    font-size: 0.875rem;
+
+    &--apply {
+      @include button-style($primary-color);
+    }
+  }
+}
+
+// Dark mode styles
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #f8f9fa;
+
+  .polygon-list {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .polygon-list__title {
+    color: #f8f9fa;
+  }
+
+  .polygon-list__theme-toggle {
+    color: #f8f9fa;
+  }
+
+  .polygon-list__search input {
+    background-color: #3a3a3a;
+    border-color: #4a4a4a;
+    color: #f8f9fa;
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  .polygon-item {
+    background-color: #3a3a3a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .polygon-item__edit-input {
+    background-color: #4a4a4a;
+    border-color: #5a5a5a;
+    color: #f8f9fa;
+  }
+
+  .color-picker {
+    background-color: #3a3a3a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    input {
+      background-color: #4a4a4a;
+      border-color: #5a5a5a;
+      color: #f8f9fa;
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .polygon-list {
+    padding: 1rem;
+  }
+
+  .polygon-list__title {
+    font-size: 1.5rem;
+  }
+
+  .polygon-list__items {
+    grid-template-columns: 1fr;
+  }
+
+  .polygon-item__actions {
+    flex-direction: column;
+  }
+
+  .polygon-item__button {
+    width: 100%;
+  }
+
+  .color-picker {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 300px;
+  }
+}
