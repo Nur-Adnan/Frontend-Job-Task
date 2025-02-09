@@ -51,6 +51,3 @@
 4.Open your browser to:
   ```bash
   http://localhost:3000
-
-
-
