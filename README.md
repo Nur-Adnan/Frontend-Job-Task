@@ -31,3 +31,26 @@
 | Build Tool             | Vite                                |
 
 
+## Installation
+
+### Prerequisites
+- Node.js (v18+)
+- npm (v9+)
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Nur-Adnan/Frontend-Job-Task.git
+2. Install dependencies:
+   ```bash
+   cd Frontend_Job_Task
+   npm install
+3. Start the development server:
+   ```bash
+   npm run dev
+4.Open your browser to:
+  ```bash
+  http://localhost:3000
+
+
+
