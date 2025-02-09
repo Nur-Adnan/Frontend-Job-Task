@@ -1,43 +1,52 @@
 # Interactive Polygon Mapping Tool 🌐
 
-**Live Demo:** [View Application](https://frontend-job-task-rho.vercel.app/)  
+**Live Demo:** [Access Production Environment](https://frontend-job-task-rho.vercel.app/)  
+**Video Demonstration:** [View Functionality Walkthrough](https://github.com/user-attachments/assets/97b4c739-ad15-4419-9ed6-a37f21ad5df4)
 
+## Overview
+A geospatial web application enabling precise polygon creation and management with real-time geographic calculations. Designed for environmental monitoring, urban planning, and GIS applications.
 
-## Features ✨
+## Key Features
 
-### Core Capabilities
-- 🖱️ Interactive Polygon Drawing & Editing
-- 🎨 Custom Color Styling (Fill/Border with HEX codes)
-- 📍 Automatic Centroid Markers with Area Tooltips
-- ✅ Polygon Validation (Overlap/Intersection Prevention)
-- 🔄 Full CRUD Operations for Spatial Features
+### Core Functionality
+- **Polygon Management**
+  - Interactive drawing tools with vertex-level precision
+  - Dynamic editing capabilities (position, shape, vertices)
+  - Customizable visual properties (HEX color codes for fill/border)
+  - Auto-generated centroid markers with hover-activated area displays
 
-### Advanced Functionality
-- 📥📤 JSON Data Import/Export
-- 📍 Browser Geolocation Integration
-- 🔍 Polygon Search by ID
-- 📏 Real-time Area Calculations (Hectares/km²)
-- 📱 Responsive Design for All Devices
+- **Data Integrity**
+  - Geometric validation preventing overlaps/intersections
+  - Complete CRUD operations for spatial features
+  - Real-time metric conversions (hectares ↔ km²)
 
-## Technology Stack 🛠️
+### Advanced Capabilities
+- **Data Interoperability**
+  - Full JSON schema import/export functionality
+  - RESTful API-ready data structures
+
+- **Geospatial Tools**
+  - Browser geolocation integration
+  - Polygon search by unique identifier
+  - Responsive design optimized for field devices
+
+## Technical Architecture
 
 | Component              | Technology                          |
 |------------------------|-------------------------------------|
-| Framework              | Next.js 14              |
+| Frontend Framework     | Next.js 14 (App Router)             |
 | State Management       | Redux Toolkit                       |
-| Mapping Library        | React Leaflet + Leaflet Draw        |
-| Styling                | SCSS Modules                        |
-| Language               | TypeScript 5                        |
-| Build Tool             | Vite                                |
+| Geospatial Rendering   | React Leaflet v4 + Leaflet Draw     |
+| Style System           | SCSS Modules                        |
+| Development Environment| Vite + TypeScript 5                 |
 
+## System Requirements
+- Node.js v18 LTS or newer
+- npm v9+ or compatible package manager
 
-## Installation
+## Implementation Guide
 
-### Prerequisites
-- Node.js (v18+)
-- npm (v9+)
-
-### Steps
+### Local Deployment
 1. Clone the repository:
    ```bash
    git clone https://github.com/Nur-Adnan/Frontend-Job-Task.git
